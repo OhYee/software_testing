@@ -1,14 +1,16 @@
 import pygame
+import os
+import sys
 
 TILE_POSITIONS = [
     ('#',  0, 0),  # wall
-    ('2',  1, 0),  # blue
+    ('b',  1, 0),  # blue
     ('.',  2, 0),  # dot
     ('>',  3, 0),  # face right
     ('<',  4, 0),  # face left
     ('$',  5, 0),  # monster
     (' ',  0, 1),  # floor
-    ('2',  1, 1),  # white
+    ('w',  1, 1),  # white
     ('v',  3, 1),  # face down
     ('^',  4, 1),  # face top
     ('o',  5, 1),  # face back
@@ -27,7 +29,8 @@ def load_tiles():
     Returns a tuple of (image, tile_dict)
     '''
     tiles = {}
-    tile_img = pygame.image.load('../img/tiles.xpm')
+
+    tile_img = pygame.image.load(os.path.join(sys.path[0], '../img/tiles.xpm'))
     for symbol, x, y in TILE_POSITIONS:
         tiles[symbol] = pygame.Rect(x*SIZE, y*SIZE, SIZE, SIZE)
     return tile_img, tiles
