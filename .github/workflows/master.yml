@@ -13,4 +13,4 @@ jobs:
     - run: sudo apt-get install python-pygame -y --fix-missing
     - run: sudo python -m pip install pytest pytest-cov codecov
     - run: pytest --cov-report=xml --cov=src/
-    - run: codecov
+    - run: codecov --token ${{ secrets.CODECOV_TOKEN }}
