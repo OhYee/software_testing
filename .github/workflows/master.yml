@@ -10,7 +10,7 @@ jobs:
       with:
         python-version: '3.8'
     - run: sudo apt-get upgrade
-    - run: sudo apt-get install python-pygame -y
+    - run: sudo apt-get install python-pygame -y --fix-missing
     - run: python -m pip install -r requirements.txt
     - run: pytest --cov-report=xml --cov=src/
     - run: codecov
