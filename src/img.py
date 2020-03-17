@@ -45,4 +45,4 @@ if __name__ == '__main__':
     m.blit(tile_img,  get_tiles_rect(2, 0), tiles['>'])
     m.blit(tile_img,  get_tiles_rect(3, 0), tiles['.'])
 
-    pygame.image.save(m, '../dist/tile_combo.png')
+    pygame.image.save(m, os.path.join(sys.path[0], '../dist/tile_combo.png'))
